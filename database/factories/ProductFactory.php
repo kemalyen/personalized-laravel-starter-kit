@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -24,6 +25,7 @@ class ProductFactory extends Factory
             'sku' => $this->faker->unique()->word(),
             'image_path' => $this->faker->imageUrl(),
             'is_active' => $this->faker->boolean(80), // 80% chance to be active
+            'category_id' => Category::factory(),
             'created_at' => now(),
             'updated_at' => now(),
         ];

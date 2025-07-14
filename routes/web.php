@@ -28,3 +28,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Volt::route('/users', 'users.index');
+
+Route::get('/products/create', \App\Livewire\Products\CreateProduct::class)
+    ->name('products.create');

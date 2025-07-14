@@ -21,6 +21,7 @@ class Product extends Model
         'sku',
         'image_path',
         'is_active',
+        'category_id',
     ];
 
     protected $casts = [
