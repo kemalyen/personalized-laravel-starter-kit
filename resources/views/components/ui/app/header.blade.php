@@ -15,6 +15,7 @@
                             'Learn More' => '/learn',
                             'Users' => '/users',
                             'Create an User' => '/users/create',
+                                                        'Products' => '/products',
                             ];
                 @endphp
                 <!-- Navigation Links -->

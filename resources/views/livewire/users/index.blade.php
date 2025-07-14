@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\User;
-use Illuminate\Support\Collection;
 use Livewire\Volt\Component;
 use Mary\Traits\Toast;
 use Livewire\WithPagination;
@@ -38,12 +37,7 @@ new class extends Component {
         ];
     }
 
-    /**
-     * For demo purpose, this is a static collection.
-     *
-     * On real projects you do it with Eloquent collections.
-     * Please, refer to maryUI docs to see the eloquent examples.
-     */
+ 
     public function users()
     {
         return User::query()
