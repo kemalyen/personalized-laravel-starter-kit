@@ -3,8 +3,8 @@
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LogoutController;
 use Illuminate\Support\Facades\Route;
-use Livewire\Volt\Volt;
 
+use Livewire\Volt\Volt;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +27,8 @@ Route::middleware('auth')->group(function () {
         ->name('logout');
 });
 
-Volt::route('/users', 'users.index');
+
+Volt::route('/', 'users.index');
 
 Route::get('/products/create', \App\Livewire\Products\CreateProduct::class)
     ->name('products.create');

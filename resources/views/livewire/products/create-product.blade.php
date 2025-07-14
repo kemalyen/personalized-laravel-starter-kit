@@ -14,13 +14,14 @@
                    
 
                     <x-form wire:submit="save">
+ 
                         <x-input label="Name" wire:model="name" />
-                        <x-input label="stock" wire:model="stock" />
-                        <x-input label="price" wire:model="price" prefix="USD" money />
+                        <x-input label="Stock" wire:model="stock" />
+                        <x-input label="Price" wire:model="price" />
 
                         <x-slot:actions>
                             <x-button label="Cancel" />
-                            <x-button label="Click me!" class="btn-primary" type="submit" spinner="save" />
+                            <x-button label="Create" class="btn-seconday" type="primary" submit="true" spinner="save" />
                         </x-slot:actions>
                     </x-form>
                 </div>

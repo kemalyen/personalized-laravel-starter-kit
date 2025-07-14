@@ -26,10 +26,9 @@ class ProductForm extends Form
     public function store()
     {
         $this->validate();
-
+        dd($this->all());
         Product::create($this->all());
 
-        $this->reset(); 
-
+        $this->reset();
     }
 }

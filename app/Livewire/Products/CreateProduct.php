@@ -13,6 +13,7 @@ class CreateProduct extends Component
 
     public function save()
     {
+        
         $this->form->store();
 
         return $this->redirect('/products');
