@@ -9,11 +9,9 @@ use Livewire\Component;
 class CreateProduct extends Component
 {
     public ProductForm $form;
-
-
+ 
     public function save()
     {
-        
         $this->form->store();
 
         return $this->redirect('/products');

@@ -13,11 +13,11 @@
                 <div class="max-w-xl">
                    
 
-                    <x-form wire:submit="save">
+                    <x-form wire:submit="save"  class="mt-6 space-y-6">
  
-                        <x-input label="Name" wire:model="name" />
-                        <x-input label="Stock" wire:model="stock" />
-                        <x-input label="Price" wire:model="price" />
+                        <x-input label="Name" wire:model="form.name" />
+                        <x-input label="Stock" wire:model="form.stock" />
+                        <x-input label="Price" wire:model="form.price" />
 
                         <x-slot:actions>
                             <x-button label="Cancel" />
