@@ -33,4 +33,26 @@ class Product extends Model
     {
         return $query->where('is_active', true);
     }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function getImageUrlAttribute()
+    {
+        return $this->image_path ? asset($this->image_path) : null;
+    }
+
+    public function getFormattedPriceAttribute()
+    {
+        return number_format($this->price, 2);
+    }
+
+    public function getFormattedStockAttribute()
+    {
+        return number_format($this->stock);
+    }
+
+    
 }

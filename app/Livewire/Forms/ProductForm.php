@@ -8,7 +8,9 @@ use Livewire\Form;
 
 class ProductForm extends Form
 {
-    #[Validate('required|min:5')]
+    public Product $product;
+
+    #[Validate('required|min:3|max:255')]
     public $name;
 
     public $description;
@@ -19,14 +21,33 @@ class ProductForm extends Form
     #[Validate('required|numeric|min:0')]
     public $stock;
 
-    #[Validate('required|exists:categories,id')]
-    public $category;
+    #[Validate('required|min:3|max:255')]
+    public $sku;
 
+    public $is_active = true;
+
+    #[Validate('required|exists:categories,id')]
+    public $category_id;
+
+
+    public function setProduct(Product $product)
+    {
+        $this->product = $product;
+        $this->fill($product->toArray());
+    }
+
+    public function update()
+    {
+        $this->validate();
+
+        $this->product->update($this->all());
+
+    }
 
     public function store()
     {
         $this->validate();
-        dd($this->all());
+
         Product::create($this->all());
 
         $this->reset();

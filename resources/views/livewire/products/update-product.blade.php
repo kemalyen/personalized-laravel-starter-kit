@@ -1,7 +1,7 @@
 <div>
     <x-slot name="header">
         <h2 class="text-lg font-semibold leading-tight text-gray-800 dark:text-gray-200">
-            {{ __('Create a product') }}
+            {{ __('Update a product') }}
         </h2>
     </x-slot>
 
@@ -26,7 +26,7 @@
 
                         <x-slot:actions>
                             <x-button label="Cancel" />
-                            <x-button label="Create" class="btn-seconday" type="primary" submit="true" spinner="save" />
+                            <x-button label="UPDATE" class="btn-seconday" type="primary" submit="true" spinner="save" />
                         </x-slot:actions>
                     </x-form>
                 </div>

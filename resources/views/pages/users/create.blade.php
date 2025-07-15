@@ -66,10 +66,7 @@ new class extends Component {
 
     @volt('user.create')
     <div class="pb-5">
-        <div class="mx-auto space-y-6">
-
-
-
+        <div class="mx-auto space-y-6"> 
             {{-- Create an user  --}}
             <section
                 class="p-4 bg-white shadow sm:p-8 dark:bg-gray-800 sm:rounded-lg dark:bg-gray-900/50 dark:border dark:border-gray-200/10">

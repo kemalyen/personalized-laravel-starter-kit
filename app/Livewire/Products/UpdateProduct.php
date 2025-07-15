@@ -4,26 +4,30 @@ namespace App\Livewire\Products;
 
 use App\Livewire\Forms\ProductForm;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
 
-class CreateProduct extends Component
+class UpdateProduct extends Component
 {
     public ProductForm $form;
     public Collection $categories;
     public ?int $category_searchable_id = null;
 
-    public function mount()
+    public function mount(Product $product)
     {
+        $this->form->setProduct($product);
+        $this->category_searchable_id = $product->category_id;
         $this->search();
     }
 
     public function save()
     {
-        $this->form->store();
+        $this->form->update();
 
-        return $this->redirect('/products');
+        return $this->redirect('/PRODUCTS');
     }
+
 
     public function search(string $value = '')
     {
@@ -40,6 +44,6 @@ class CreateProduct extends Component
 
     public function render()
     {
-        return view('livewire.products.create-product');
+        return view('livewire.products.update-product');
     }
 }

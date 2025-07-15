@@ -32,3 +32,6 @@ Volt::route('/', 'users.index');
 
 Route::get('/products/create', \App\Livewire\Products\CreateProduct::class)
     ->name('products.create');
+
+Route::get('/products/{product}/update', \App\Livewire\Products\UpdateProduct::class)
+    ->name('products.update');

@@ -25,6 +25,8 @@ new class extends Component {
             ['key' => 'id', 'label' => '#', 'class' => 'w-1'],
             ['key' => 'sku', 'label' => 'SKU', 'class' => 'w-32'],
             ['key' => 'name', 'label' => 'Name', 'class' => 'w-64'],
+            ['key' => 'is_active', 'label' => 'Active', 'class' => 'w-16'],
+            ['key' => 'category.name', 'label' => 'Category', 'class' => 'w-32'],
             ['key' => 'price', 'label' => 'Price', 'class' => 'w-16'],
             ['key' => 'stock', 'label' => 'Stock', 'class' => 'w-16'],
             ['key' => 'created_at', 'label' => 'Created At', 'class' => 'w-32'],
@@ -65,9 +67,9 @@ new class extends Component {
     <div class="pb-5">
         <div class="mx-auto space-y-6">
             <x-card shadow>
-                <x-table :headers="$headers" :rows="$products" :sort-by="$sortBy" with-pagination>
+                <x-table :headers="$headers" :rows="$products" :sort-by="$sortBy" with-pagination  :link="route('products.update', ['product' => '[id]'])">
                     @scope('actions', $user)
-                    <x-button   wire:click="delete({{ $user['id'] }})" wire:confirm="Are you sure?" spinner class="btn-ghost btn-sm text-error" />
+                    <x-button  wire:click="delete({{ $user['id'] }})" wire:confirm="Are you sure?" spinner class="btn-ghost btn-sm text-error" />
                     @endscope
                 </x-table>
             </x-card>
