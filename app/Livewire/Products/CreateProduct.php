@@ -6,9 +6,12 @@ use App\Livewire\Forms\ProductForm;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class CreateProduct extends Component
 {
+        use WithFileUploads;   
+
     public ProductForm $form;
     public Collection $categories;
     public ?int $category_searchable_id = null;

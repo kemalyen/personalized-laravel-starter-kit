@@ -5,9 +5,10 @@ namespace App\Livewire\Forms;
 use App\Models\Product;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
+use Illuminate\Support\Str; 
 
 class ProductForm extends Form
-{
+{ 
     public Product $product;
 
     #[Validate('required|min:3|max:255')]
@@ -29,6 +30,10 @@ class ProductForm extends Form
     #[Validate('required|exists:categories,id')]
     public $category_id;
 
+    #[Validate('nullable|image|max:1024')] // Not required on edit
+    public $image_path;
+
+    
 
     public function setProduct(Product $product)
     {
@@ -40,6 +45,14 @@ class ProductForm extends Form
     {
         $this->validate();
 
+        if ($this->image_path) {
+            $image_name = Str::slug($this->sku) .'-'. time() . '.' . $this->image_path->extension();
+            $this->image_path->storeAs('images', $image_name, 'public');
+            $this->image_path = 'images/' . $image_name;
+        } else {
+            // Keep the current image_path in the database
+            $this->image_path = $this->product->image_path;
+        }
         $this->product->update($this->all());
 
     }
@@ -48,8 +61,11 @@ class ProductForm extends Form
     {
         $this->validate();
 
-        Product::create($this->all());
+        $image_name = Str::slug($this->sku) .'-'. time() . '.' . $this->image_path->extension();
+        $this->image_path->storeAs('images', $image_name, 'public');
+        $this->image_path = 'images/' . $image_name;
 
-        $this->reset();
+        Product::create($this->all());
+        session()->flash('message', 'Product created successfully.');
     }
 }

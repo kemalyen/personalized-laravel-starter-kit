@@ -16,6 +16,7 @@
                     <x-form wire:submit="save" class="mt-6 space-y-6">
 
                         <x-input label="Name" wire:model="form.name" />
+                        <x-textarea label="Biography" wire:model="form.description" rows="5" />
                         <x-input label="Stock" wire:model="form.stock" />
                         <x-input label="Price" wire:model="form.price" />
                         <x-input label="SKU" wire:model="form.sku" />
@@ -23,6 +24,9 @@
                         <x-choices label="Category" wire:model="form.category_id" :options="$categories" placeholder="Search ..."
                             single
                             searchable />
+
+                            <x-file wire:model="form.image_path" label="Image"/>
+
 
                         <x-slot:actions>
                             <x-button label="Cancel" />

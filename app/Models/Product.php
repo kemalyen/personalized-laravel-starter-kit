@@ -27,6 +27,7 @@ class Product extends Model
     protected $casts = [
         'price' => 'decimal:2',
         'is_active' => 'boolean',
+        'created_at' => 'datetime',
     ];
 
     public function scopeActive($query)
@@ -53,6 +54,15 @@ class Product extends Model
     {
         return number_format($this->stock);
     }
+    public function getCreatedAtFormattedAttribute()
+    {
+        return $this->created_at->format('d M Y');
+    }
 
-    
+    public function getActiveStatusAttribute()
+    {
+        return $this->is_active ? 'Active' : 'Inactive';
+    }
+
+
 }

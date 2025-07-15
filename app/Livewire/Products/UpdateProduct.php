@@ -7,9 +7,12 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class UpdateProduct extends Component
 {
+     use WithFileUploads;   
+
     public ProductForm $form;
     public Collection $categories;
     public ?int $category_searchable_id = null;
