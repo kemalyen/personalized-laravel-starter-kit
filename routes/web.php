@@ -27,11 +27,11 @@ Route::middleware('auth')->group(function () {
         ->name('logout');
 });
 
+Route::middleware('auth', 'verified')->group(function () {
+    Volt::route('/users', 'users.index');
+    Route::get('/products/create', \App\Livewire\Products\CreateProduct::class)
+        ->name('products.create');
 
-Volt::route('/', 'users.index');
-
-Route::get('/products/create', \App\Livewire\Products\CreateProduct::class)
-    ->name('products.create');
-
-Route::get('/products/{product}/update', \App\Livewire\Products\UpdateProduct::class)
-    ->name('products.update');
+    Route::get('/products/{product}/update', \App\Livewire\Products\UpdateProduct::class)
+        ->name('products.update');
+});

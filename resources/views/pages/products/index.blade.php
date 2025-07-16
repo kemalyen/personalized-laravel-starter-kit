@@ -72,7 +72,7 @@ new class extends Component {
 
 
 
-<x-layouts.app>
+<x-layouts.admin>
 
     <x-slot name="header">
         <h2 class="text-lg font-semibold leading-tight text-gray-800 dark:text-gray-200">
@@ -99,4 +99,4 @@ new class extends Component {
     </div>
     @endvolt
 
-</x-layouts.app>
+</x-layouts.admin>

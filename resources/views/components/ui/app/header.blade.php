@@ -12,7 +12,6 @@
                 @php
                 $navLinks = [
                 'Dashboard' => '/dashboard',
-                'Learn More' => '/learn',
                 'Users' => '/users',
                 'Create an User' => '/users/create',
                 'Products' => '/products',

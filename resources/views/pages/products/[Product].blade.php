@@ -5,7 +5,7 @@ use function Laravel\Folio\name;
 name('products.show');
 ?>
 
-<x-layouts.app>
+<x-layouts.admin>
 
     <x-slot name="header">
         <h2 class="text-lg font-semibold leading-tight text-gray-800 dark:text-gray-200">
@@ -29,4 +29,4 @@ name('products.show');
         </div>
     </div>
 
-</x-layouts.app>
+</x-layouts.admin>
