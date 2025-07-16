@@ -7,7 +7,9 @@ use App\Models\Category;
 use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Livewire\Attributes\Layout;
 
+#[Layout('components.layouts.admin')] 
 class CreateProduct extends Component
 {
         use WithFileUploads;   

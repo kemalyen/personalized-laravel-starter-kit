@@ -3,7 +3,7 @@
         <div x-data="{ mobileMenuOpen: false }" class="relative flex items-center md:space-x-2 text-neutral-800">
             
             <div class="relative z-50 flex items-center w-auto h-full">
-                <a href="{{ route('home') }}" class="flex items-center mr-0 md:mr-5 shrink-0">
+                <a href="{{ route('home') }}" class="flex items-center mr-2 md:mr-5 shrink-0">
                     <x-ui.logo class="block w-auto text-gray-800 fill-current h-7 dark:text-gray-200" />
                 </a>
                 <div @click="mobileMenuOpen=!mobileMenuOpen" class="relative flex items-center justify-center w-8 h-8 ml-5 overflow-hidden text-gray-500 bg-gray-100 rounded cursor-pointer md:hidden hover:text-gray-700 hover:bg-gray-200">
@@ -16,8 +16,9 @@
             </div>
             <div :class="{ 'flex' : mobileMenuOpen, 'hidden md:flex' :  !mobileMenuOpen }" class="fixed top-0 left-0 z-40 flex-col items-start justify-start hidden w-full h-full min-h-screen pt-20 space-y-5 text-sm font-medium duration-150 ease-out transform md:pt-0 text-neutral-500 md:h-auto md:min-h-0 md:left-auto md:items-center md:relative">
                 
-                <nav class="flex flex-col w-full p-6 space-y-2 bg-white md:p-0 md:flex-row md:space-x-2 md:space-y-0 md:w-auto md:bg-transparent md:flex">
+                <nav class="flex flex-col w-full p-6 space-y-2 bg-white md:p-0 md:flex-row md:space-x-2 md:space-y-0 md:w-auto md:bg-transparent md:flex ml-4">
                     <x-ui.nav-link href="/">Home</x-ui.nav-link>
+                    <x-ui.nav-link href="/about">About</x-ui.nav-link>
                     @if(view()->exists('pages.blog.index'))
                         <x-ui.nav-link href="/blog">Blog</x-ui.nav-link>
                     @endif

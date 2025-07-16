@@ -29,6 +29,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth', 'verified')->group(function () {
     Volt::route('/users', 'users.index');
+    
     Route::get('/products/create', \App\Livewire\Products\CreateProduct::class)
         ->name('products.create');
 

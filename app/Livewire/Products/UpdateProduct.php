@@ -8,7 +8,9 @@ use App\Models\Product;
 use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Livewire\Attributes\Layout;
 
+#[Layout('components.layouts.admin')] 
 class UpdateProduct extends Component
 {
      use WithFileUploads;   

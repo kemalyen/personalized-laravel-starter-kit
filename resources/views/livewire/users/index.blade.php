@@ -3,6 +3,8 @@
 use Illuminate\Support\Collection;
 use Livewire\Volt\Component;
 use Mary\Traits\Toast;
+use Livewire\Attributes\Layout;
+
 
 new class extends Component {
 
@@ -13,6 +15,11 @@ new class extends Component {
     public bool $drawer = false;
 
     public array $sortBy = ['column' => 'name', 'direction' => 'asc'];
+
+    #[Layout('components.layouts.admin')]
+    public function mount()
+    {
+    }
 
     // Clear filters
     public function clear(): void
