@@ -1,19 +1,6 @@
-<p align="center"><a href="https://github.com/thedevdojo/genesis" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.devdojo.com/assets/svg/genesis-logo-light.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://cdn.devdojo.com/assets/svg/genesis-logo.svg">
-    <img alt="Genesis Logo" width="240" src="https://cdn.devdojo.com/assets/svg/genesis-logo.svg">
-  </picture></a></p>
-<p align="center" class="flex mx-auto space-x-2">
-<a href="https://packagist.org/packages/devdojo/genesis"><img src="https://img.shields.io/packagist/dt/devdojo/genesis" alt="Total Downloads"></a>
-<a href="https://herd.laravel.com/new?starter-kit=devdojo/genesis"><img src="https://img.shields.io/badge/Install%20with%20Herd-f55247?logo=laravel&logoColor=white"></a>
-</p>
+## Personal Laravel Starter Kit
 
-## About Genesis
-
-A Laravel starter kit built on the **TALL Stack**, along with **Volt** and **Folio**.
-
-<p><img src="https://cdn.devdojo.com/images/march2025/genesis-screenshot.png" alt="genesis cover" /></p>
+A Laravel starter kit built on the **TALL Stack**, along with **Volt** and **Folio** inspired from [Genesis](https://github.com/thedevdojo/genesis)
 
 ## Installation
 
